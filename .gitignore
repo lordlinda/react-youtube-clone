@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 /node_modules
 /build
 
@@ -13,6 +14,8 @@ yarn-debug.kog*
 yarn-error.log*
 
 .vscode
+=======
+>>>>>>> 22db0880070ba23955329bd0a7ad959c8f1f2361
 =======
 >>>>>>> 22db0880070ba23955329bd0a7ad959c8f1f2361
 =======

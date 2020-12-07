@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Hello, My Friends  
 Thank you for having interest in this repository ! 
 
@@ -18,6 +19,10 @@ You can watch the tutorial for this app.
 
 https://www.youtube.com/watch?v=SsMn8tT3ZBQ&t=4365s
 
+=======
+# react-youtube-clone
+mern stack youtube clone
+>>>>>>> 22db0880070ba23955329bd0a7ad959c8f1f2361
 =======
 # react-youtube-clone
 mern stack youtube clone
