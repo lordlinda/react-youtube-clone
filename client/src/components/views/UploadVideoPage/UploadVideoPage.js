@@ -120,7 +120,7 @@ function UploadVideoPage(props) {
   };
 
   return (
-    <div style={{ maxWidth: "700px", margin: "2rem auto" }}>
+    <div style={{ maxWidth: "700px", margin: "2rem auto", padding: "20px" }}>
       <div style={{ textAlign: "center", marginBottom: "2rem" }}>
         <Title level={2}> Upload Video</Title>
       </div>
@@ -149,7 +149,7 @@ function UploadVideoPage(props) {
           {Thumbnail !== "" && (
             <div>
               <img
-                src={`${process.env.REACT_APP_URL}${Thumbnail}`}
+                src={`https://mern-youtube-clone.herokuapp.com/${Thumbnail}`}
                 alt="thunmbnail"
               />
             </div>
