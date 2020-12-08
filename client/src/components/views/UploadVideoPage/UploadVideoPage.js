@@ -149,7 +149,7 @@ function UploadVideoPage(props) {
           {Thumbnail !== "" && (
             <div>
               <img
-                src={`https://mern-youtube-clone.herokuapp.com/${Thumbnail}`}
+                src={`${process.env.REACT_APP_URL}${Thumbnail}`}
                 alt="thunmbnail"
               />
             </div>
