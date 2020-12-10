@@ -27,7 +27,7 @@ function SideVideo() {
           <a href={`/video/${video._id}`} style={{ color: "gray" }}>
             <img
               style={{ width: "100%" }}
-              src={`${process.env.REACT_APP_URL}${video.thumbnail}`}
+              src={`https://mern-youtube-clone.herokuapp.com/${video.thumbnail}`}
               alt="thumbnail"
             />
           </a>

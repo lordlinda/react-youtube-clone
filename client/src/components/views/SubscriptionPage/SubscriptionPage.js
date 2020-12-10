@@ -34,7 +34,7 @@ function SubscriptionPage() {
             <img
               style={{ width: "100%" }}
               alt="thumbnail"
-              src={`http://localhost:5000/${video.thumbnail}`}
+              src={`https://mern-youtube-clone.herokuapp.com/${video.thumbnail}`}
             />
             <div
               className=" duration"
