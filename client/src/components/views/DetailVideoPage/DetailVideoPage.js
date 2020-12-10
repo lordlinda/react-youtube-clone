@@ -17,7 +17,6 @@ function DetailVideoPage(props) {
   useEffect(() => {
     axios.post("/api/video/getVideo", videoVariable).then((response) => {
       if (response.data.success) {
-        console.log(response.data.video);
         setVideo(response.data.video);
       } else {
         alert("Failed to get video Info");
@@ -26,7 +25,6 @@ function DetailVideoPage(props) {
 
     axios.post("/api/comment/getComments", videoVariable).then((response) => {
       if (response.data.success) {
-        console.log("response.data.comments", response.data.comments);
         setCommentLists(response.data.comments);
       } else {
         alert("Failed to get video Info");
@@ -49,7 +47,7 @@ function DetailVideoPage(props) {
           >
             <video
               style={{ width: "100%" }}
-              src={`${process.env.REACT_APP_URL}${Video.filePath}`}
+              src={`https://mern-youtube-clone.herokuapp.com/${Video.filePath}`}
               controls
             ></video>
 

@@ -31,7 +31,7 @@ function LandingPage() {
             <img
               style={{ width: "100%" }}
               alt="thumbnail"
-              src={`${process.env.REACT_APP_URL}${video.thumbnail}`}
+              src={`https://mern-youtube-clone.herokuapp.com/${video.thumbnail}`}
             />
             <div
               className=" duration"
