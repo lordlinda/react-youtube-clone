@@ -13,24 +13,28 @@ function Comments(props) {
   const handleChange = (e) => {
     setComment(e.currentTarget.value);
   };
+  console.log(user);
 
   const onSubmit = (e) => {
     e.preventDefault();
+    if (user.userData.isAuth) {
+      const variables = {
+        content: Comment,
+        writer: user.userData._id,
+        postId: props.postId,
+      };
 
-    const variables = {
-      content: Comment,
-      writer: user.userData._id,
-      postId: props.postId,
-    };
-
-    axios.post("/api/comment/saveComment", variables).then((response) => {
-      if (response.data.success) {
-        setComment("");
-        props.refreshFunction(response.data.result);
-      } else {
-        alert("Failed to save Comment");
-      }
-    });
+      axios.post("/api/comment/saveComment", variables).then((response) => {
+        if (response.data.success) {
+          setComment("");
+          props.refreshFunction(response.data.result);
+        } else {
+          alert("Failed to save Comment");
+        }
+      });
+    } else {
+      alert("please signin");
+    }
   };
 
   return (

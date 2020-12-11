@@ -17,26 +17,30 @@ function SingleComment(props) {
   const openReply = () => {
     setOpenReply(!OpenReply);
   };
+  console.log(user.userData._id);
 
   const onSubmit = (e) => {
     e.preventDefault();
+    if (user.userData.isAuth) {
+      const variables = {
+        writer: user.userData._id,
+        postId: props.postId,
+        responseTo: props.comment._id,
+        content: CommentValue,
+      };
 
-    const variables = {
-      writer: user.userData._id,
-      postId: props.postId,
-      responseTo: props.comment._id,
-      content: CommentValue,
-    };
-
-    Axios.post("/api/comment/saveComment", variables).then((response) => {
-      if (response.data.success) {
-        setCommentValue("");
-        setOpenReply(!OpenReply);
-        props.refreshFunction(response.data.result);
-      } else {
-        alert("Failed to save Comment");
-      }
-    });
+      Axios.post("/api/comment/saveComment", variables).then((response) => {
+        if (response.data.success) {
+          setCommentValue("");
+          setOpenReply(!OpenReply);
+          props.refreshFunction(response.data.result);
+        } else {
+          alert("Failed to save Comment");
+        }
+      });
+    } else {
+      alert("please sign in");
+    }
   };
 
   const actions = [
@@ -54,8 +58,13 @@ function SingleComment(props) {
     <div>
       <Comment
         actions={actions}
-        author={props.comment.writer.name}
-        avatar={<Avatar src={props.comment.writer.image} alt="image" />}
+        author={props.comment.writer ? props.comment.writer.name : ""}
+        avatar={
+          <Avatar
+            src={props.comment.writer ? props.comment.writer.image : ""}
+            alt="image"
+          />
+        }
         content={<p>{props.comment.content}</p>}
       ></Comment>
 
