@@ -17,7 +17,6 @@ function SingleComment(props) {
   const openReply = () => {
     setOpenReply(!OpenReply);
   };
-  console.log(user.userData._id);
 
   const onSubmit = (e) => {
     e.preventDefault();

@@ -13,7 +13,6 @@ function Comments(props) {
   const handleChange = (e) => {
     setComment(e.currentTarget.value);
   };
-  console.log(user);
 
   const onSubmit = (e) => {
     e.preventDefault();
